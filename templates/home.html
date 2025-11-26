@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Hat Shop</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 30px;
+      }
+      .box {
+        border: 1px solid #ccc;
+        padding: 20px;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🧢 Hat Shop Inventory System</h1>
+
+    <div class="box">
+      <h3>Staff Login</h3>
+      <form method="POST" action="/search">
+        <label>Admin Password:</label><br />
+        <input type="password" name="password" /><br /><br />
+
+        <label>Search Item:</label><br />
+        <input type="text" name="item_name" /><br /><br />
+
+        <input type="submit" value="Check Stock" />
+      </form>
+    </div>
+
+    <p>{{ result_msg | safe }}</p>
+  </body>
+</html>
