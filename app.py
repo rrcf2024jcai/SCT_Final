@@ -31,7 +31,7 @@ def search_inventory():
         cursor.execute(sql_query)
         rows = cursor.fetchall()
         
-        # Preparing the HTML result 
+        # Preparing the HTML
         output = "<h3>Results for: " + item + "</h3><ul>"
         
         if rows:
