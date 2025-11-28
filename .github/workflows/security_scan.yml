@@ -1,0 +1,23 @@
+name: Security Check (Bandit)
+
+# Trigger the scan when I push code or make a pull request
+on: [push, pull_request]
+
+jobs:
+  my_security_scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
+
+      - name: Install Bandit
+        run: pip install bandit
+
+      - name: Run Bandit Scan
+        run: bandit -r . -ll
